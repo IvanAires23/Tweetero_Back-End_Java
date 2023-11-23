@@ -7,10 +7,12 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 import lombok.Data;
 
 @Data
 @Entity
+@Table(name = "Users")
 public class User {
 
     public User(UserDTO data) {
@@ -22,9 +24,9 @@ public class User {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    @Column(length = 245, nullable = false)
+    @Column(length = 50, nullable = false)
     private String username;
 
-    @Column(length = 245, nullable = false)
+    @Column(length = 50, nullable = false)
     private String avatar;
 }
