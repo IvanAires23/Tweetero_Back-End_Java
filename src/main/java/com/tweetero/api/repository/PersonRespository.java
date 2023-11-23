@@ -1,7 +1,9 @@
 package com.tweetero.api.repository;
 
-import org.springframework.data.repository.support.Repositories;
+import org.springframework.data.jpa.repository.JpaRepository;
 
-public class PersonRespository extends Repositories {
+import com.tweetero.api.model.User;
+
+public interface PersonRespository extends JpaRepository<User, Long> {
 
 }
