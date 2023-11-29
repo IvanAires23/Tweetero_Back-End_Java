@@ -13,6 +13,8 @@ import com.tweetero.api.dto.TweetDTO;
 import com.tweetero.api.model.Tweet;
 import com.tweetero.api.repository.TweetReposirory;
 
+import jakarta.validation.Valid;
+
 @RestController
 @RequestMapping("/tweets")
 public class TweetController {
@@ -21,7 +23,7 @@ public class TweetController {
     private TweetReposirory reposirory;
 
     @PostMapping
-    String createTweet(@RequestBody TweetDTO req) {
+    String createTweet(@RequestBody @Valid TweetDTO req) {
         reposirory.save(new Tweet(req));
         return "OK";
     }
